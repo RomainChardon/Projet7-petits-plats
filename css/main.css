@@ -1,0 +1,73 @@
+/* BODY */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Manrope;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5rem;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(../assets/img/bg-img.webp), lightgray 50%/cover no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 40rem;
+}
+
+.logo {
+  position: absolute;
+  top: 5rem;
+}
+
+.center-title {
+  padding: 0 23rem;
+}
+
+.center-title h1 {
+  color: #FFD15B;
+  text-align: center;
+  font-family: Anton;
+  font-size: 44px;
+  padding: 0 2.8rem;
+  margin-bottom: 50px;
+}
+
+.head-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.head-input input {
+  color: #7A7A7A;
+  padding: 0 30px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  height: 60px;
+  width: 100%;
+}
+
+.head-input span {
+  display: flex;
+  align-items: center;
+  border-radius: 0 10px 10px 0;
+  padding-right: 10px;
+  border: none;
+  height: 60px;
+  background: #fff;
+}
+
+.head-input button {
+  vertical-align: center;
+  width: 45px;
+  height: 46px;
+  border: 0;
+  border-radius: 10px;
+  background: #1B1B1B;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */
