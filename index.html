@@ -6,10 +6,13 @@
 
     <link rel="stylesheet" href="css/main.css">
 
+    <script src="./js/recipes.js" type="text/javascript"></script>
+
 <!--    FONT     -->
     <link href='https://fonts.googleapis.com/css?family=Manrope' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet'>
 <!--    / FONT     -->
+
 </head>
 <body>
     <header>
@@ -21,13 +24,19 @@
             <h1>
                 CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
             </h1>
-            <div class="head-input">
+            <form action="" method="get" class="head-input">
                 <input type="text" name="search-bar" id="search-bar" placeholder="Rechercher une recette, un ingrédient, ...">
-                <span>
-                    <button><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
-                </span>
-            </div>
+                <button type="submit"><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
+            </form>
         </div>
     </header>
+    <main>
+        <section id="recipes">
+
+        </section>
+    </main>
+
+    <script src="js/displayRecipes.js"></script>
+    <script src="js/importData.js"></script>
 </body>
 </html>
