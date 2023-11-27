@@ -69,3 +69,12 @@ function recipeTemplate(data) {
     
     return {name, image, getRecipeDOM};
 }
+
+function displayListFiltre(liste, select) {
+    liste.forEach((element) => {
+        const option = document.createElement("option");
+        option.innerText = element;
+
+        select.appendChild(option);
+    })
+}

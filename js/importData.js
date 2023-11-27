@@ -1,14 +1,10 @@
 init();
 
 function init() {
-    // Récupère les datas des recettes
+    // Récupère les data des recettes
     // console.log(recipes);
     displayData(recipes);
 
-    // Récupère les appareils et les utensils
-    const ingredients = getListIngredients(recipes);
-    const ustensils = getListUstensils(recipes);
-    const appareils = getListAppareils(recipes);
 }
 
 function displayData(recipes) {
@@ -19,6 +15,20 @@ function displayData(recipes) {
         const recipeCard = recipeModel.getRecipeDOM();
         recipesSection.appendChild(recipeCard);
     })
+
+    // Récupère les appareils et les utensils
+    const ingredients = getListIngredients(recipes);
+    const ustensils = getListUstensils(recipes);
+    const appareils = getListAppareils(recipes);
+
+    const selectIngredients = document.querySelector('#filtre-ingredients');
+    const selectAppareils = document.querySelector('#filtre-appareils');
+    const selectUstensils = document.querySelector('#filtre-ustensils');
+
+    displayListFiltre(ingredients, selectIngredients);
+    displayListFiltre(ustensils, selectAppareils);
+    displayListFiltre(appareils, selectUstensils);
+
 
     // afficher le nombre de recette
     const nbRecette = document.querySelector('#nb-recipes');
