@@ -1,5 +1,4 @@
 function recipeTemplate(data) {
-    console.log(data);
     const { id, image, name, servings, ingredients, time, description, appliance, ustensils } = data;
 
     const picture = `./assets/img-recette/${image}`;
