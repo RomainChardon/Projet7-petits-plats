@@ -72,9 +72,12 @@ function recipeTemplate(data) {
 
 function displayListFiltre(liste, select) {
     liste.forEach((element) => {
-        const option = document.createElement("option");
-        option.innerText = element;
+        const div = document.createElement("div");
 
-        select.appendChild(option);
+        const p = document.createElement("p");
+        p.innerText = element;
+
+        div.appendChild(p);
+        select.appendChild(div);
     })
 }

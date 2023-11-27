@@ -32,22 +32,22 @@
     </header>
     <main>
         <div class="filtre-container">
-            <div class="filtre-select">
-                <select id="filtre-ingredients">
-                    <option>Ingrédients</option>
-                    <option>-------</option>
-                </select>
-                <select id="filtre-appareils">
-                    <option>Appareils</option>
-                    <option>-------</option>
-                </select>
-                <select id="filtre-ustensils">
-                    <option>Ustensils</option>
-                    <option>-------</option>
-                </select>
+            <div class="filtre-select filtre-select-ingredients">
+                <div class="filtre-label">
+                    <div class="filtre-title">
+                        <p>Ingrédients</p>
+                        <img src="./assets/svg/caret-down.svg" alt="caret select">
+                    </div>
+                    <input type="text" name="ingredients-search" id="ingredients-search">
+
+                </div>
+                <div class="filtre-content">
+                    <div class="filtre-list-ingredients"></div>
+                </div>
             </div>
-            <p id="nb-recipes"></p>
         </div>
+        <p id="nb-recipes"></p>
+
         <section id="recipes">
 
         </section>
@@ -55,5 +55,6 @@
 
     <script src="js/displayRecipes.js"></script>
     <script src="js/importData.js"></script>
+    <script src="js/filter.js"></script>
 </body>
 </html>

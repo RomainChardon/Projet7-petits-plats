@@ -88,6 +88,40 @@ main {
   background: $background;
 }
 
+/* FILTRE LIST */
+
+.filtre-select {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 200px;
+  background: #ffffff;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.filtre-label {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filtre-label input {
+  display: none;
+  border-color: 1px solid #C6C6C6;
+  padding: 0.3rem;
+}
+
+.filtre-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.filtre-content {
+  display: none;
+}
 
 /* SECTION RECETTE */
 
