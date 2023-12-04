@@ -74,7 +74,21 @@ main {
 }
 
 /* FILTRE LIST */
+.filtre-container {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem 8rem;
+  justify-content: space-between;
+}
+
+.filtre-element {
+  display: flex;
+  flex-direction: row;
+  gap: 5rem;
+}
+
 .filtre-select {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -105,6 +119,27 @@ main {
 
 .filtre-content {
   display: none;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  background: #ffffff;
+  z-index: 9;
+  padding: 20px 15px 5px 15px;
+  width: calc(100% - 30px);
+  left: 0;
+  transform: translateY(1.5rem);
+  border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.filtre-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 15rem;
+  overflow: auto;
+}
+
+.show {
+  display: flex;
 }
 
 /* SECTION RECETTE */
@@ -114,7 +149,7 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   row-gap: 8rem;
-  padding: 8rem;
+  padding: 5rem 8rem;
 }
 
 article {

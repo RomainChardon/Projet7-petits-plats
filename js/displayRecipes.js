@@ -73,6 +73,7 @@ function recipeTemplate(data) {
 function displayListFiltre(liste, select) {
     liste.forEach((element) => {
         const div = document.createElement("div");
+        div.setAttribute('onclick','selectElement(this);')
 
         const p = document.createElement("p");
         p.innerText = element;

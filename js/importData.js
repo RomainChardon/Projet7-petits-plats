@@ -28,12 +28,12 @@ function displayFilter() {
     const appareils = getListAppareils(recipes);
 
     const selectIngredients = document.querySelector('.filtre-list-ingredients');
-    // const selectAppareils = document.querySelector('.filtre-list-appareils');
-    // const selectUstensils = document.querySelector('.filtre-list-ustensils');
+    const selectAppareils = document.querySelector('.filtre-list-appareils');
+    const selectUstensils = document.querySelector('.filtre-list-ustensils');
 
     displayListFiltre(ingredients, selectIngredients);
-    // displayListFiltre(ustensils, selectAppareils);
-    // displayListFiltre(appareils, selectUstensils);
+    displayListFiltre(ustensils, selectAppareils);
+    displayListFiltre(appareils, selectUstensils);
 }
 
 function getListIngredients(recipes) {

@@ -32,21 +32,51 @@
     </header>
     <main>
         <div class="filtre-container">
-            <div class="filtre-select filtre-select-ingredients">
-                <div class="filtre-label">
-                    <div class="filtre-title">
-                        <p>Ingrédients</p>
-                        <img src="./assets/svg/caret-down.svg" alt="caret select">
+            <div class="filtre-element">
+                <div class="filtre-select filtre-select-ingredients">
+                    <div class="filtre-label" onclick="showDropdown(this);">
+                        <div class="filtre-title">
+                            <p>Ingrédients</p>
+                            <img src="./assets/svg/caret-down.svg" alt="caret select">
+                        </div>
                     </div>
-                    <input type="text" name="ingredients-search" id="ingredients-search">
-
+                    <div class="filtre-content">
+                        <input type="text" name="ingredients-search" id="ingredients-search" onkeyup="filterElement(this);">
+                        <div class="filtre-list-ingredients filtre-list"></div>
+                    </div>
                 </div>
-                <div class="filtre-content">
-                    <div class="filtre-list-ingredients"></div>
+
+                <div class="filtre-select filtre-select-appareils">
+                    <div class="filtre-label" onclick="showDropdown(this);">
+                        <div class="filtre-title">
+                            <p>Appareils</p>
+                            <img src="./assets/svg/caret-down.svg" alt="caret select">
+                        </div>
+                    </div>
+                    <div class="filtre-content">
+                        <input type="text" name="ingredients-search" id="appareils-search" onkeyup="filterElement(this);">
+                        <div class="filtre-list-appareils filtre-list"></div>
+                    </div>
+                </div>
+
+                <div class="filtre-select filtre-select-ustensils">
+                    <div class="filtre-label" onclick="showDropdown(this);">
+                        <div class="filtre-title">
+                            <p>Ustensils</p>
+                            <img src="./assets/svg/caret-down.svg" alt="caret select">
+                        </div>
+                    </div>
+                    <div class="filtre-content">
+                        <input type="text" name="ustensils-search" id="ustensils-search" onkeyup="filterElement(this);">
+                        <div class="filtre-list-ustensils filtre-list"></div>
+                    </div>
                 </div>
             </div>
+            <div class="info-recette">
+                <p id="nb-recipes"></p>
+                <p>recettes</p>
+            </div>
         </div>
-        <p id="nb-recipes"></p>
 
         <section id="recipes">
 
