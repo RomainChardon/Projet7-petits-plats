@@ -24,7 +24,7 @@
             <h1>
                 CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES
             </h1>
-            <form action="" method="get" class="head-input">
+            <form id="search-form" action="" method="get" class="head-input">
                 <input type="text" name="search-bar" id="search-bar" placeholder="Rechercher une recette, un ingrédient, ...">
                 <button type="submit"><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
             </form>
@@ -78,6 +78,12 @@
             </div>
         </div>
 
+        <form action="" method="get">
+            <select id="filtre-selected" name="filtre-selected" multiple>
+            </select>
+            <button type="submit"><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
+        </form>
+
         <section id="recipes">
 
         </section>
@@ -86,5 +92,6 @@
     <script src="js/displayRecipes.js"></script>
     <script src="js/importData.js"></script>
     <script src="js/filter.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>

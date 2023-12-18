@@ -7,6 +7,7 @@ function recipeTemplate(data) {
         const article = document.createElement('article');
         article.setAttribute('onclick', 'linkURL('+id+')');
         article.setAttribute('aria-label', 'Lien vers la page de '+name);
+        article.dataset.name = name;
 
             const timeCard = document.createElement('span');
             timeCard.classList.add('time');

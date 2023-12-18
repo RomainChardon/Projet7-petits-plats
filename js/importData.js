@@ -7,10 +7,10 @@ function init() {
     displayFilter(recipes);
 }
 
-function displayData(recipes) {
+function displayData(data) {
     const recipesSection = document.querySelector("#recipes");
 
-    recipes.forEach((recipe) => {
+    data.forEach((recipe) => {
         const recipeModel = recipeTemplate(recipe);
         const recipeCard = recipeModel.getRecipeDOM();
         recipesSection.appendChild(recipeCard);
@@ -18,7 +18,7 @@ function displayData(recipes) {
 
     // afficher le nombre de recette
     const nbRecette = document.querySelector('#nb-recipes');
-    nbRecette.innerText = recipes.length;
+    nbRecette.innerText = data.length;
 }
 
 function displayFilter() {

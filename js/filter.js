@@ -18,8 +18,12 @@ function filterElement(search) {
 }
 
 function selectElement(element) {
-    showDropdown(element.parentNode.parentNode);
-    const title = element.parentNode.parentNode.parentNode.querySelector('.filtre-title > p');
-    title.innerText = element.innerText;
+    const select = document.querySelector('#filtre-selected');
+    const option = document.createElement('option');
+    option.value = element.innerText;
+    option.innerText = element.innerText;
+    option.setAttribute('selected', 'selected');
+
+    select.appendChild(option);
 
 }
