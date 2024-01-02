@@ -6,7 +6,8 @@ function filterElement(search) {
     const input = search.value;
     const filter = input.toUpperCase();
 
-    const element = search.parentNode.querySelectorAll(".filtre-list > div > p");
+    const element = search.parentNode.parentNode.querySelectorAll(".filtre-list > div > p");
+    console.log(search.parentNode.parentNode);
     element.forEach((e) => {
         const valueSpan = e.innerText;
         if (valueSpan.toUpperCase().indexOf(filter) > -1) {
@@ -18,12 +19,23 @@ function filterElement(search) {
 }
 
 function selectElement(element) {
+
     const select = document.querySelector('#filtre-selected');
-    const option = document.createElement('option');
-    option.value = element.innerText;
-    option.innerText = element.innerText;
-    option.setAttribute('selected', 'selected');
+    const span = document.createElement('span');
+    span.innerText = element.children[0].innerText;
+    span.dataset.group = element.children[0].dataset.group;
+    span.setAttribute('class', 'filtre-select');
 
-    select.appendChild(option);
+    const img = document.createElement( 'img' );
+    img.setAttribute("src", "./assets/svg/close-black.svg");
+    img.setAttribute("onclick", "deleteFilter(this)");
 
+    span.appendChild(img);
+    select.appendChild(span);
+
+    reseach();
+}
+
+function deleteFilter(element) {
+    document.querySelector("#filtre-selected").removeChild(element.parentNode);
 }

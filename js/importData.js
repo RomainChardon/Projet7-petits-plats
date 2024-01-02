@@ -2,13 +2,11 @@ init();
 
 function init() {
     // Récupère les data des recettes
-    // console.log(recipes);
     displayData(recipes);
     displayFilter(recipes);
 }
 
 function displayData(data) {
-    console.log(data);
     const recipesSection = document.querySelector("#recipes");
     recipesSection.innerHTML = "";
 
@@ -24,18 +22,21 @@ function displayData(data) {
 }
 
 function displayFilter(data) {
+    // Clear les filtres de recherche
+    // document.querySelector('#filtre-selected').innerHTML = '';
+
     // Récupère les appareils et les utensils
-    const ingredients = getListIngredients(data);
-    const ustensils = getListUstensils(data);
-    const appareils = getListAppareils(data);
+    const listIngredients = getListIngredients(data);
+    const listUstensils = getListUstensils(data);
+    const listAppareils = getListAppareils(data);
 
     const selectIngredients = document.querySelector('.filtre-list-ingredients');
     const selectAppareils = document.querySelector('.filtre-list-appareils');
     const selectUstensils = document.querySelector('.filtre-list-ustensils');
 
-    displayListFiltre(ingredients, selectIngredients);
-    displayListFiltre(ustensils, selectAppareils);
-    displayListFiltre(appareils, selectUstensils);
+    displayListFiltre(listIngredients, selectIngredients, 'ingredients');
+    displayListFiltre(listUstensils, selectAppareils, 'ustensils');
+    displayListFiltre(listAppareils, selectUstensils, 'appareils');
 }
 
 function getListIngredients(recipes) {

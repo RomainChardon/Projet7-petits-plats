@@ -71,7 +71,7 @@ function recipeTemplate(data) {
     return {name, image, getRecipeDOM};
 }
 
-function displayListFiltre(liste, select) {
+function displayListFiltre(liste, select, type) {
     select.innerHTML = '';
     liste.forEach((element) => {
         const div = document.createElement("div");
@@ -79,6 +79,7 @@ function displayListFiltre(liste, select) {
 
         const p = document.createElement("p");
         p.innerText = element;
+        p.dataset.group = type;
 
         div.appendChild(p);
         select.appendChild(div);

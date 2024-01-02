@@ -70,6 +70,13 @@ header {
   padding: 0 65px 0 30px;
 }
 
+.clear-searchbar {
+  display: none;
+  position: absolute;
+  right: 70px;
+  height: 15px;
+}
+
 .head-input button {
   position: absolute;
   right: 8px;
@@ -104,13 +111,27 @@ main {
 
 }
 
+.filtre-select-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 8rem;
+  justify-content: space-between;
+}
+
+#filtre-selected .filtre-select {
+  background: #FFD15B;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .filtre-select {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   width: 200px;
-  background: #ffffff;
+  background: #fff;
   border-radius: 0.8rem;
   padding: 1rem;
 }
@@ -131,7 +152,13 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+}
+
+.filtre-title img {
+  width: 20px;
+  height: 15px;
 }
 
 .filtre-content {
@@ -146,6 +173,30 @@ main {
   left: 0;
   transform: translateY(1.5rem);
   border-radius: 0 0 0.8rem 0.8rem;
+}
+
+.filtre-input {
+  position: relative;
+}
+
+.filtre-input input {
+  width: calc(100% - 70px);
+  padding: 5px 60px 5px 10px;
+  border-radius: 2px;
+  border: 1px solid var(--Light-Grey, #C6C6C6);
+}
+
+.filtre-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}
+
+.filtre-icon img {
+  width: 15px;
 }
 
 .filtre-list {

@@ -26,6 +26,7 @@
             </h1>
             <form id="search-form" action="" method="get" class="head-input">
                 <input type="text" name="search-bar" id="search-bar" placeholder="Rechercher une recette, un ingrédient, ...">
+                <img src="assets/svg/close.svg" alt="close btn" class="clear-searchbar" onclick="clearSearch(this)">
                 <button type="submit"><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
             </form>
         </div>
@@ -41,7 +42,13 @@
                         </div>
                     </div>
                     <div class="filtre-content">
-                        <input type="text" name="ingredients-search" id="ingredients-search" onkeyup="filterElement(this);">
+                        <div class="filtre-input">
+                            <input type="text" name="ingredients-search" id="ingredients-search" onkeyup="filterElement(this);">
+                            <div class="filtre-icon">
+                                <img src="assets/svg/close.svg" alt="close btn" onclick="clearSearch(this)">
+                                <img src="assets/svg/search-grey.svg" alt="Search icon">
+                            </div>
+                        </div>
                         <div class="filtre-list-ingredients filtre-list"></div>
                     </div>
                 </div>
@@ -54,7 +61,13 @@
                         </div>
                     </div>
                     <div class="filtre-content">
-                        <input type="text" name="ingredients-search" id="appareils-search" onkeyup="filterElement(this);">
+                        <div class="filtre-input">
+                            <input type="text" name="ingredients-search" id="appareils-search" onkeyup="filterElement(this);">
+                            <div class="filtre-icon">
+                                <img src="assets/svg/close.svg" alt="close btn" onclick="clearSearch(this)">
+                                <img src="assets/svg/search-grey.svg" alt="Search icon">
+                            </div>
+                        </div>
                         <div class="filtre-list-appareils filtre-list"></div>
                     </div>
                 </div>
@@ -67,7 +80,13 @@
                         </div>
                     </div>
                     <div class="filtre-content">
-                        <input type="text" name="ustensils-search" id="ustensils-search" onkeyup="filterElement(this);">
+                        <div class="filtre-input">
+                            <input type="text" name="ustensils-search" id="ustensils-search" onkeyup="filterElement(this);">
+                            <div class="filtre-icon">
+                                <img src="assets/svg/close.svg" alt="close btn" onclick="clearSearch(this)">
+                                <img src="assets/svg/search-grey.svg" alt="Search icon">
+                            </div>
+                        </div>
                         <div class="filtre-list-ustensils filtre-list"></div>
                     </div>
                 </div>
@@ -78,11 +97,8 @@
             </div>
         </div>
 
-        <form action="" method="get">
-            <select id="filtre-selected" name="filtre-selected" multiple>
-            </select>
-            <button type="submit"><img src="assets/svg/search-white.svg" alt="Bouton de recherche"></button>
-        </form>
+        <div id="filtre-selected" class="filtre-select-container">
+        </div>
 
         <section id="recipes">
 
