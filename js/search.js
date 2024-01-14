@@ -17,11 +17,11 @@ function reseach() {
     if (searchBar.value.length > 3) {
         /* RECHERCHE TITRE, DESCRIPTION, INGREDIENT */
         recipes.forEach((recipe) => {
-            if (recipe.name.toUpperCase().indexOf(searchBar.value.toUpperCase()) > -1) {
+            if (recipe.name.toLowerCase().indexOf(searchBar.value.toLowerCase()) > -1) {
                 if (!allRecipes.includes(recipe)) {
                     allRecipes.push(recipe);
                 }
-            } else if (recipe.description.toUpperCase().indexOf(searchBar.value.toUpperCase()) > -1) {
+            } else if (recipe.description.toLowerCase().indexOf(searchBar.value.toLowerCase()) > -1) {
                 if (!allRecipes.includes(recipe)) {
                     allRecipes.push(recipe);
                 }
@@ -36,23 +36,35 @@ function reseach() {
             }
         })
 
+
         if (selectFilter.length > 0) {
-            selectFilter.forEach((filtre) => {
-                console.log(allRecipes);
-                allRecipes.forEach((recipe) => {
+            const newRecipe = [];
+            allRecipes.forEach((recipe) => {
+
+                let recipeTrue = true;
+                selectFilter.forEach((filtre) => {
                     if (filtre.dataset.group === 'ingredients') {
-                        if (recipe.ingredients.find((element) => element.ingredient === filtre.innerText) === undefined) {
-                            console.log(allRecipes.indexOf(recipe))
-                            allRecipes.splice(allRecipes.indexOf(recipe), 1);
+                        console.log(recipe.ingredients.filter((element) => element.ingredient.toLowerCase() === filtre.innerText.toLowerCase()))
+
+                        if (recipe.ingredients.filter((element) => element.ingredient.toLowerCase() === filtre.innerText.toLowerCase()).length === 0) {
+                            recipeTrue = false;
                         }
                     }
                 })
+
+                if (recipeTrue) {
+                    newRecipe.push(recipe);
+                }
             })
+
+            console.log(newRecipe)
+
+            displayData(newRecipe);
+            displayFilter(newRecipe);
+        } else {
+            displayData(allRecipes);
+            displayFilter(allRecipes);
         }
-
-
-        displayData(allRecipes);
-        displayFilter(allRecipes);
     }
 
 
@@ -63,4 +75,6 @@ function reseach() {
 
 function clearSearch(element) {
     element.parentNode.parentNode.querySelector("input").value = "";
+    displayData(recipes);
+    displayFilter(recipes);
 }

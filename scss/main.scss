@@ -195,6 +195,11 @@ main {
   top: 8px;
 }
 
+.filtre-icon img:first-child {
+  width: 10px;
+  cursor: pointer;
+}
+
 .filtre-icon img {
   width: 15px;
 }
@@ -204,10 +209,15 @@ main {
   flex-direction: column;
   max-height: 15rem;
   overflow: auto;
+  cursor: pointer;
 }
 
 .show {
   display: flex;
+}
+
+.rotate {
+  transform: rotate(180deg);
 }
 
 /* SECTION RECETTE */

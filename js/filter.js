@@ -1,5 +1,6 @@
 function showDropdown(element) {
     element.parentNode.querySelector('.filtre-content').classList.toggle("show");
+    element.querySelector('img').classList.toggle("rotate");
 }
 
 function filterElement(search) {
@@ -38,4 +39,5 @@ function selectElement(element) {
 
 function deleteFilter(element) {
     document.querySelector("#filtre-selected").removeChild(element.parentNode);
+    reseach();
 }
