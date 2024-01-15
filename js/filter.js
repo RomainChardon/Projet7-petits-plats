@@ -21,6 +21,8 @@ function filterElement(search) {
 
 function selectElement(element) {
 
+    element.style.display = 'none';
+
     const select = document.querySelector('#filtre-selected');
     const span = document.createElement('span');
     span.innerText = element.children[0].innerText;

@@ -115,7 +115,8 @@ main {
   display: flex;
   flex-direction: row;
   padding: 0 8rem;
-  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 #filtre-selected .filtre-select {

@@ -11,7 +11,6 @@ function reseach() {
         clear.style.display = "none";
     }
 
-    const selectFilter = document.querySelectorAll('#filtre-selected > span');
     const allRecipes = [];
 
     if (searchBar.value.length > 3) {
@@ -36,41 +35,46 @@ function reseach() {
             }
         })
 
-
-        if (selectFilter.length > 0) {
-            const newRecipe = [];
-            allRecipes.forEach((recipe) => {
-
-                let recipeTrue = true;
-                selectFilter.forEach((filtre) => {
-                    if (filtre.dataset.group === 'ingredients') {
-                        console.log(recipe.ingredients.filter((element) => element.ingredient.toLowerCase() === filtre.innerText.toLowerCase()))
-
-                        if (recipe.ingredients.filter((element) => element.ingredient.toLowerCase() === filtre.innerText.toLowerCase()).length === 0) {
-                            recipeTrue = false;
-                        }
-                    }
-                })
-
-                if (recipeTrue) {
-                    newRecipe.push(recipe);
-                }
-            })
-
-            console.log(newRecipe)
-
-            displayData(newRecipe);
-            displayFilter(newRecipe);
-        } else {
-            displayData(allRecipes);
-            displayFilter(allRecipes);
-        }
+        applyFilter(allRecipes);
+    } else {
+        applyFilter(recipes);
     }
+}
 
+function applyFilter(allRecipes) {
+    const selectFilter = document.querySelectorAll('#filtre-selected > span');
 
+    const newRecipe = [];
+    allRecipes.forEach((recipe) => {
 
+        let recipeTrue = true;
+        selectFilter.forEach((filtre) => {
+            if (filtre.dataset.group === 'ingredients') {
+                if (recipe.ingredients.filter((element) => element.ingredient.toLowerCase() === filtre.innerText.toLowerCase()).length === 0) {
+                    recipeTrue = false;
+                }
+            }
 
+            if (filtre.dataset.group === 'appareils') {
+                if (recipe.appliance.toLowerCase() !== filtre.innerText.toLowerCase()) {
+                    recipeTrue = false;
+                }
+            }
 
+            if (filtre.dataset.group === 'ustensils') {
+                if (recipe.ustensils.filter((element) => element.toLowerCase() === filtre.innerText.toLowerCase()).length === 0) {
+                    recipeTrue = false;
+                }
+            }
+
+        })
+
+        if (recipeTrue) {
+            newRecipe.push(recipe);
+        }
+    })
+    displayData(newRecipe);
+    displayFilter(newRecipe);
 }
 
 function clearSearch(element) {

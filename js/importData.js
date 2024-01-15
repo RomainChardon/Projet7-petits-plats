@@ -35,8 +35,8 @@ function displayFilter(data) {
     const selectUstensils = document.querySelector('.filtre-list-ustensils');
 
     displayListFiltre(listIngredients, selectIngredients, 'ingredients');
-    displayListFiltre(listUstensils, selectAppareils, 'ustensils');
-    displayListFiltre(listAppareils, selectUstensils, 'appareils');
+    displayListFiltre(listAppareils, selectAppareils, 'appareils');
+    displayListFiltre(listUstensils, selectUstensils, 'ustensils');
 }
 
 function getListIngredients(recipes) {
