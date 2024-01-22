@@ -46,47 +46,52 @@ function applyFilter(allRecipes) {
     const selectFilter = document.querySelectorAll('#filtre-selected > span');
 
     const newRecipe = [];
-    console.log(allRecipes)
 
+    console.log(allRecipes);
     for (let i = 0; i < allRecipes.length; i++) {
 
-        let recipeTrue = false;
+        let recipeTrue = 0;
         for (let i = 0; i < selectFilter.length; i++) {
             if (selectFilter[i].dataset.group === 'ingredients') {
-
-                // On regarde chaque ingrédient si true
                 let checkIngredient = false;
                 for (let u = 0; u < allRecipes[i].ingredients.length; u++) {
                     if (allRecipes[i].ingredients[u].ingredient.toLowerCase() === selectFilter[i].innerText.toLowerCase()) {
                         checkIngredient = true;
                     }
                 }
+                if (checkIngredient) {
+                    recipeTrue++;
+                }
+            }
+
+            if (selectFilter[i].dataset.group === 'appareils') {
+                let checkAppareils = false;
+                if (allRecipes[i].appliance.toLowerCase() === selectFilter[i].innerText.toLowerCase()) {
+                    checkAppareils = true;
+                }
+                if (checkAppareils) {
+                    recipeTrue++;
+                }
+            }
+
+            if (selectFilter[i].dataset.group === 'ustensils') {
+                let checkUstensils = false;
+                if (allRecipes[i].ustensils.toLowerCase() === selectFilter[i].innerText.toLowerCase()) {
+                    checkUstensils = true;
+                }
+                if (checkUstensils) {
+                    recipeTrue++;
+                }
             }
 
         }
-        //     if (filtre.dataset.group === 'ingredients') {
-        //         if (recipe.ingredients.filter((element) => element.ingredient.toLowerCase() === filtre.innerText.toLowerCase()).length === 0) {
-        //             recipeTrue = false;
-        //         }
-        //     }
-        //
-        //     if (filtre.dataset.group === 'appareils') {
-        //         if (recipe.appliance.toLowerCase() !== filtre.innerText.toLowerCase()) {
-        //             recipeTrue = false;
-        //         }
-        //     }
-        //
-        //     if (filtre.dataset.group === 'ustensils') {
-        //         if (recipe.ustensils.filter((element) => element.toLowerCase() === filtre.innerText.toLowerCase()).length === 0) {
-        //             recipeTrue = false;
-        //         }
-        //     }
-        //
-        // })
+        console.log(selectFilter);
 
-        if (recipeTrue) {
+        if (recipeTrue === selectFilter.length) {
             newRecipe.push(allRecipes[i]);
         }
+
+        // console.log(newRecipe);
     }
     displayData(newRecipe);
     displayFilter(newRecipe);
