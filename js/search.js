@@ -47,15 +47,14 @@ function applyFilter(allRecipes) {
 
     const newRecipe = [];
 
-    console.log(allRecipes);
     for (let i = 0; i < allRecipes.length; i++) {
-
         let recipeTrue = 0;
-        for (let i = 0; i < selectFilter.length; i++) {
-            if (selectFilter[i].dataset.group === 'ingredients') {
+        for (let f = 0; f < selectFilter.length; f++) {
+            if (selectFilter[f].dataset.group === 'ingredients') {
                 let checkIngredient = false;
                 for (let u = 0; u < allRecipes[i].ingredients.length; u++) {
-                    if (allRecipes[i].ingredients[u].ingredient.toLowerCase() === selectFilter[i].innerText.toLowerCase()) {
+
+                    if (allRecipes[i].ingredients[u].ingredient.toLowerCase() === selectFilter[f].innerText.toLowerCase()) {
                         checkIngredient = true;
                     }
                 }
@@ -64,9 +63,9 @@ function applyFilter(allRecipes) {
                 }
             }
 
-            if (selectFilter[i].dataset.group === 'appareils') {
+            if (selectFilter[f].dataset.group === 'appareils') {
                 let checkAppareils = false;
-                if (allRecipes[i].appliance.toLowerCase() === selectFilter[i].innerText.toLowerCase()) {
+                if (allRecipes[i].appliance.toLowerCase() === selectFilter[f].innerText.toLowerCase()) {
                     checkAppareils = true;
                 }
                 if (checkAppareils) {
@@ -74,9 +73,9 @@ function applyFilter(allRecipes) {
                 }
             }
 
-            if (selectFilter[i].dataset.group === 'ustensils') {
+            if (selectFilter[f].dataset.group === 'ustensils') {
                 let checkUstensils = false;
-                if (allRecipes[i].ustensils.toLowerCase() === selectFilter[i].innerText.toLowerCase()) {
+                if (allRecipes[i].ustensils.toLowerCase() === selectFilter[f].innerText.toLowerCase()) {
                     checkUstensils = true;
                 }
                 if (checkUstensils) {
@@ -85,13 +84,10 @@ function applyFilter(allRecipes) {
             }
 
         }
-        console.log(selectFilter);
 
         if (recipeTrue === selectFilter.length) {
             newRecipe.push(allRecipes[i]);
         }
-
-        // console.log(newRecipe);
     }
     displayData(newRecipe);
     displayFilter(newRecipe);
