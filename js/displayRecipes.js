@@ -73,15 +73,28 @@ function recipeTemplate(data) {
 
 function displayListFiltre(liste, select, type) {
     select.innerHTML = '';
+    const filtreActif = document.querySelectorAll("#filtre-selected > span");
     liste.forEach((element) => {
-        const div = document.createElement("div");
-        div.setAttribute('onclick','selectElement(this);')
+        let actif = false;
+        if (filtreActif.length > 0) {²
+            filtreActif.forEach((f) => {
+                if (f.innerText === element) {
+                    actif = true;
+                }
+            })
+        }
 
-        const p = document.createElement("p");
-        p.innerText = element;
-        p.dataset.group = type;
+        if (actif === false) {
+            const div = document.createElement("div");
+            div.setAttribute('onclick','selectElement(this);')
 
-        div.appendChild(p);
-        select.appendChild(div);
+            const p = document.createElement("p");
+            p.innerText = element;
+            p.dataset.group = type;
+
+            div.appendChild(p);
+            select.appendChild(div);
+        }
+
     })
 }

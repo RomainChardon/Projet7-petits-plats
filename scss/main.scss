@@ -224,11 +224,9 @@ main {
 /* SECTION RECETTE */
 
 section {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 8rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
   padding: 5rem 8rem;
 }
 
@@ -236,8 +234,8 @@ article {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: calc((100% / 3) - 5rem);
   border-radius: 2rem;
+  margin: auto;
 }
 
 .time {

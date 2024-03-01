@@ -8,7 +8,7 @@ function filterElement(search) {
     const filter = input.toUpperCase();
 
     const element = search.parentNode.parentNode.querySelectorAll(".filtre-list > div > p");
-    console.log(search.parentNode.parentNode);
+
     element.forEach((e) => {
         const valueSpan = e.innerText;
         if (valueSpan.toUpperCase().indexOf(filter) > -1) {
@@ -20,8 +20,7 @@ function filterElement(search) {
 }
 
 function selectElement(element) {
-
-    element.style.display = 'none';
+    console.log(element);
 
     const select = document.querySelector('#filtre-selected');
     const span = document.createElement('span');
@@ -42,4 +41,10 @@ function selectElement(element) {
 function deleteFilter(element) {
     document.querySelector("#filtre-selected").removeChild(element.parentNode);
     reseach();
+}
+
+function clearFilter(element) {
+    const input = element.parentNode.parentNode.querySelector("input");
+    input.value = "";
+    filterElement(input);
 }
