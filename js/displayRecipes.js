@@ -76,7 +76,7 @@ function displayListFiltre(liste, select, type) {
     const filtreActif = document.querySelectorAll("#filtre-selected > span");
     liste.forEach((element) => {
         let actif = false;
-        if (filtreActif.length > 0) {²
+        if (filtreActif.length > 0) {
             filtreActif.forEach((f) => {
                 if (f.innerText === element) {
                     actif = true;
