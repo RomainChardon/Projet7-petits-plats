@@ -84,6 +84,7 @@ function displayListFiltre(liste, select, type) {
             })
         }
 
+        // Vérifie si le filtre est actif
         if (actif === false) {
             const div = document.createElement("div");
             div.setAttribute('onclick','selectElement(this);')

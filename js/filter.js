@@ -38,6 +38,8 @@ function selectElement(element) {
     reseach();
 }
 
+
+/* Clear les input de recherche */
 function deleteFilter(element) {
     document.querySelector("#filtre-selected").removeChild(element.parentNode);
     reseach();

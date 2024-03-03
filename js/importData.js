@@ -22,9 +22,6 @@ function displayData(data) {
 }
 
 function displayFilter(data) {
-    // Clear les filtres de recherche
-    // document.querySelector('#filtre-selected').innerHTML = '';
-
     // Récupère les appareils et les utensils
     const listIngredients = getListIngredients(data);
     const listUstensils = getListUstensils(data);
